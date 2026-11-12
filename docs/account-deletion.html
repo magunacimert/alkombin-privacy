@@ -1,24 +1,81 @@
-AlKombin hesap silme talebi
-Uygulamaya giriş yapamıyorsanız, AlKombin hesabınızın ve ilişkili verilerin silinmesini e-posta yoluyla talep edebilirsiniz. Aşağıdaki düğme, talebiniz için hazırlanmış bir e-posta taslağı açar. E-postayı göndermeden önce hesabınızla ilişkili adresi kontrol edin.
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="AlKombin hesabınızı ve ilişkili verilerinizi silme talebi gönderin.">
+  <title>AlKombin Hesap Silme Talebi</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #25251f;
+      --muted: #62635d;
+      --line: #e6e3dc;
+      --paper: #fffefa;
+      --accent: #4d674f;
+      --notice-bg: #fff4d7;
+      --notice-border: #e8cd83;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #f4f2ed; color: var(--ink); font: 16px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { width: min(760px, calc(100% - 32px)); margin: 40px auto; padding: clamp(22px, 5vw, 52px); background: var(--paper); border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 12px 40px rgb(30 32 25 / 6%); }
+    h1, h2 { line-height: 1.25; letter-spacing: -.02em; }
+    h1 { margin-top: 0; font-size: clamp(2rem, 5vw, 2.7rem); }
+    h2 { margin: 0 0 12px; font-size: 1.3rem; }
+    p, li { color: var(--muted); }
+    li { margin: 8px 0; }
+    header { padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+    section { padding-top: 28px; scroll-margin-top: 20px; }
+    section + section { margin-top: 28px; border-top: 1px solid var(--line); }
+    .notice { margin: 24px 0; padding: 16px 18px; border: 1px solid var(--notice-border); border-radius: 12px; background: var(--notice-bg); }
+    .notice p { margin: 0; color: var(--ink); }
+    .button { display: inline-block; margin: 8px 0 4px; padding: 13px 18px; border: 2px solid var(--accent); border-radius: 12px; background: var(--accent); color: white; font-weight: 700; text-decoration: none; }
+    .button:hover { background: #3d543f; border-color: #3d543f; }
+    a { color: var(--accent); overflow-wrap: anywhere; text-underline-offset: .18em; }
+    a:focus-visible { outline: 3px solid #9cae82; outline-offset: 3px; border-radius: 3px; }
+    footer { margin-top: 34px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .92rem; }
+    @media (max-width: 600px) { body { background: var(--paper); } main { width: 100%; margin: 0; border: 0; border-radius: 0; box-shadow: none; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>AlKombin hesap silme talebi</h1>
+    <p>Uygulamaya giriş yapamıyorsanız, AlKombin hesabınızın ve ilişkili verilerin silinmesini e-posta yoluyla talep edebilirsiniz. Aşağıdaki düğme, talebiniz için hazırlanmış bir e-posta taslağı açar. E-postayı göndermeden önce hesabınızla ilişkili adresi kontrol edin.</p>
+  </header>
 
-Talep gönderme
-“Silme talebi e-postası oluştur” düğmesine basın.
-Açılan e-postada AlKombin hesabınızla ilişkili e-posta adresini yazın ve talep metnini kontrol edin.
-E-postayı magunacimert.mm@gmail.com adresine gönderin. Parolanızı, oturum belirtecinizi veya ödeme bilgilerinizi eklemeyin.
-Silme talebi e-postası oluştur
+  <section aria-labelledby="request">
+    <h2 id="request">Talep gönderme</h2>
+    <ol>
+      <li>“Silme talebi e-postası oluştur” düğmesine basın.</li>
+      <li>Açılan e-postada AlKombin hesabınızla ilişkili e-posta adresini yazın ve talep metnini kontrol edin.</li>
+      <li>E-postayı <a href="mailto:magunacimert.mm@gmail.com">magunacimert.mm@gmail.com</a> adresine gönderin. Parolanızı, oturum belirtecinizi veya ödeme bilgilerinizi eklemeyin.</li>
+    </ol>
+    <p><a class="button" href="mailto:magunacimert.mm@gmail.com?subject=AlKombin%20hesap%20ve%20veri%20silme%20talebi&amp;body=AlKombin%20hesabimla%20iliskili%20e-posta%20adresi%3A%20%0A%0AHesabimin%20ve%20AlKombin%20tarafindan%20tutulan%20iliskili%20verilerin%20silinmesini%20talep%20ediyorum.">Silme talebi e-postası oluştur</a></p>
+    <p>E-posta uygulamanız açılmazsa <a href="mailto:magunacimert.mm@gmail.com">magunacimert.mm@gmail.com</a> adresine konu satırında “AlKombin hesap ve veri silme talebi” yazarak ulaşın. Talep işleme alınmadan önce hesap sahipliği doğrulanabilir. E-posta taleplerinin alınması ve sonuçlandırılması otomatik değildir; bu sayfa belirli bir işlem süresi taahhüt etmez.</p>
+  </section>
 
-E-posta uygulamanız açılmazsa magunacimert.mm@gmail.com adresine konu satırında “AlKombin hesap ve veri silme talebi” yazarak ulaşın. Talep işleme alınmadan önce hesap sahipliği doğrulanabilir. E-posta taleplerinin alınması ve sonuçlandırılması otomatik değildir; bu sayfa belirli bir işlem süresi taahhüt etmez.
+  <section aria-labelledby="deleted">
+    <h2 id="deleted">Silme kapsamı ve sınırlar</h2>
+    <ul>
+      <li>Uygulama içinden onaylanan silme işlemi, Supabase Auth hesabını ve kullanıcıya bağlı sunucu AI kota kayıtlarını silmeyi dener. Sunucu yönetici yapılandırması bulunmasa veya sunucu işlemi başarısız olsa silme tamamlanmaz. Kod mevcut olmakla birlikte gerçek hesap silme işlemi uçtan uca test edilmemiştir.</li>
+      <li>Uygulama içinden silme, yalnızca işlemin başlatıldığı cihazdaki kullanıcıya ait yerel gardırop, kombin, favori, stil profili ve güvenle ilişkilendirilen uygulama fotoğraflarını temizler. Başka cihazlardaki yerel kopyalar bu sayfadan uzaktan silinemez.</li>
+      <li>AlKombin hesabını silmek Google Play aboneliğinizi iptal etmez veya ücretlendirmeyi durdurmaz. Aboneliği Google Play Store &gt; Ödemeler ve abonelikler &gt; Abonelikler bölümünden ayrıca iptal edin.</li>
+      <li>RevenueCat müşteri/entitlement kaydı ve Google Play işlem kayıtları bu sayfa üzerinden otomatik silinmez. Sağlayıcı kayıtlarının yönetimi onların koşullarına ve ilgili başvuru kanallarına tabidir.</li>
+    </ul>
+  </section>
 
-Silme kapsamı ve sınırlar
-Uygulama içinden onaylanan silme işlemi, Supabase Auth hesabını ve kullanıcıya bağlı sunucu AI kota kayıtlarını silmeyi dener. Sunucu yönetici yapılandırması bulunmasa veya sunucu işlemi başarısız olsa silme tamamlanmaz. Kod mevcut olmakla birlikte gerçek hesap silme işlemi uçtan uca test edilmemiştir.
-Uygulama içinden silme, yalnızca işlemin başlatıldığı cihazdaki kullanıcıya ait yerel gardırop, kombin, favori, stil profili ve güvenle ilişkilendirilen uygulama fotoğraflarını temizler. Başka cihazlardaki yerel kopyalar bu sayfadan uzaktan silinemez.
-AlKombin hesabını silmek Google Play aboneliğinizi iptal etmez veya ücretlendirmeyi durdurmaz. Aboneliği Google Play Store > Ödemeler ve abonelikler > Abonelikler bölümünden ayrıca iptal edin.
-RevenueCat müşteri/entitlement kaydı ve Google Play işlem kayıtları bu sayfa üzerinden otomatik silinmez. Sağlayıcı kayıtlarının yönetimi onların koşullarına ve ilgili başvuru kanallarına tabidir.
-İletişim
-Geliştirici: MAGUNACI · Uygulama: AlKombin · Android paket adı: com.alkombin.app
+  <section aria-labelledby="contact">
+    <h2 id="contact">İletişim</h2>
+    <p>Geliştirici: MAGUNACI · Uygulama: AlKombin · Android paket adı: <code>com.alkombin.app</code></p>
+    <p>E-posta: <a href="mailto:magunacimert.mm@gmail.com">magunacimert.mm@gmail.com</a></p>
+    <p><a href="index.html">Gizlilik politikasını görüntüle</a></p>
+  </section>
 
-E-posta: magunacimert.mm@gmail.com
-
-Gizlilik politikasını görüntüle
-
-Son güncelleme: 12 Kasım 2026. Bu HTML dosyası yayına hazır kaynak dosyadır; herkese açık URL olması için güvenilir bir web barındırma alanında yayımlanması gerekir.
+  <footer>
+    <p>Son güncelleme: 12 Kasım 2026. Bu HTML dosyası yayına hazır kaynak dosyadır; herkese açık URL olması için güvenilir bir web barındırma alanında yayımlanması gerekir.</p>
+  </footer>
+</main>
+</body>
+</html>
