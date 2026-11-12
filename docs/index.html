@@ -4,7 +4,7 @@ Geliştirici adı: MAGUNACI
 Android paket adı: com.alkombin.app
 İletişim: magunacimert.mm@gmail.com
 
-Yayımlama öncesi önemli not: Bu metin, mevcut uygulama ve API kodunun incelenmesine dayanır. AlKombin'de şu anda uygulama içinden hesap silme veya hesap verilerini silen bir sunucu uç noktası bulunmuyor. Bu nedenle aşağıdaki iletişim adresi bir talep kanalı sunsa da, silme işleminin uçtan uca tamamlandığı doğrulanmış değildir. Google Play'de yayımlamadan önce hesap silme süreci uygulanmalı, test edilmeli ve bu metin o sürece göre güncellenmelidir.
+Hesap silme durumu: Uygulama içi silme kodu ve sunucu endpoint'i mevcut. Sunucudaki Supabase yönetici anahtarıyla salt-okunur Auth Admin erişimi doğrulandı; ancak gerçek bir hesap silme işlemi uçtan uca test edilmedi. Bu nedenle silme akışının her durumda başarıyla tamamlandığı iddia edilmemelidir. Bu dış talep sayfası da herkese açık, kararlı bir web adresinde yayımlanmış olmalıdır.
 
 Bu metin hukuki danışmanlık değildir; yayımdan önce hukuk uzmanına inceletilmelidir.
 
@@ -35,7 +35,7 @@ Uygulama, oturumun devam etmesi ve korumalı API isteklerinin doğrulanması iç
 3. Gardırop, profil, fotoğraflar ve cihaz depolaması
 Gardırop kayıtları, kombin geçmişi ve favoriler; kıyafet adı, kategori, renk, desen, stil, mevsim ve oluşturulma tarihi gibi alanlarla cihazın yerel AsyncStorage alanında tutulur. Stil profili tercihleri de yerel olarak saklanır. Veriler oturum açmış kullanıcı kimliğine göre cihazda ayrı anahtarlarla tutulur. Uygulama kodunda gardırop verilerini Supabase'e eşitleyen bir akış bulunmamaktadır.
 
-Android'de kıyafet fotoğrafları uygulamanın belge dizinindeki alkombin klasörüne kopyalanır. Uygulama, bir kıyafet silindiğinde veya fotoğrafı değiştirildiğinde kendi yönettiği eski fotoğraf dosyasını silmeye çalışır. Bu davranış hesap silme işlemi değildir; bütün kullanıcı verilerini veya başka uygulamaların yönettiği dosyaları topluca silmez. Uygulamada tüm hesabın yerel verilerini tek seferde temizleyen bir akış tespit edilmemiştir.
+Android'de kıyafet fotoğrafları uygulamanın belge dizinindeki alkombin klasörüne kopyalanır. Uygulama, bir kıyafet silindiğinde veya fotoğrafı değiştirildiğinde kendi yönettiği eski fotoğraf dosyasını silmeye çalışır. Hesap silme akışı sunucudan başarı aldıktan sonra bu cihazdaki ilgili kullanıcıya ait gardırop, kombin, favori ve stil profili kaydını, hesap sahibinin eski yerel kayıt anahtarını ve başka bir yerel hesaptan referans edilmediği doğrulanan uygulama yönetimli fotoğrafları siler. Başka hesaptan kullanıldığı anlaşılan ya da referansları doğrulanamayan fotoğraflar güvenlik için korunur ve temizlik yeniden denenmek üzere cihazda bekletilebilir. Başka cihazlardaki yerel kopyalar uzaktan temizlenemez.
 
 Fotoğraf seçmek veya kamerayla çekmek için ilgili Android izinleri kullanılır. Fotoğraf, AI için ayrıca onay verilmediği sürece uygulama sunucusuna gönderilmez.
 
@@ -55,7 +55,7 @@ API istek kayıtları yöntem, yol ve HTTP durum kodu gibi teknik bilgileri içe
 6. Abonelik ve Google Play Billing — henüz etkin değil
 RevenueCat ve Google Play Billing için mobil kod mevcut olsa da, incelenen ortamlarda satın alma bayrağı, RevenueCat uygulama anahtarı, proje/entitlement yapılandırması ve ürün teklifleri ayarlı değildir. Bu nedenle şu anda gerçek satın alma veya geri yükleme işlemi etkin değildir.
 
-Özellik gelecekte açılırsa Google Play ödeme ve abonelik işlemlerini, RevenueCat ise satın alma/entitlement doğrulamasını işler. Uygulama sunucusu Premium durumunu kullanıcı kimliğiyle RevenueCat üzerinden doğrular; yalnızca mobil istemcinin bildirdiği duruma dayanmaz. Kart veya ödeme hesabı bilgilerini AlKombin uygulama kodunun topladığına dair bir akış bulunmamıştır. Kullanıcı abonelik iptalini Google Play abonelik yönetiminden yapar.
+Özellik gelecekte açılırsa Google Play ödeme ve abonelik işlemlerini, RevenueCat ise satın alma/entitlement doğrulamasını işler. Uygulama sunucusu Premium durumunu kullanıcı kimliğiyle RevenueCat üzerinden doğrular; yalnızca mobil istemcinin bildirdiği duruma dayanmaz. Kart veya ödeme hesabı bilgilerini AlKombin uygulama kodunun topladığına dair bir akış bulunmamıştır. Kullanıcı abonelik iptalini Google Play abonelik yönetiminden yapar. AlKombin hesabını silmek Google Play aboneliğini iptal etmez veya ücretlendirmeyi durdurmaz. Hesabınızı silmeden önce aboneliğinizi Play Store'daki abonelik yönetiminden ayrıca iptal edin. RevenueCat'teki müşteri/entitlement kaydı bu uygulama akışıyla silinmez.
 
 İlgili sağlayıcıların kendi veri işleme koşulları geçerlidir: Google Gizlilik Politikası ve RevenueCat Gizlilik Politikası.
 
@@ -74,11 +74,13 @@ AlKombin API/PostgreSQL barındırma sağlayıcısı: kimlik doğrulamalı API i
 Sağlayıcılar kendi gizlilik bildirimleri, yapılandırmaları ve sözleşmeleri kapsamında veri işleyebilir. AlKombin, bu sağlayıcıların kod dışında belirlediği saklama sürelerini veya işleme konumlarını garanti etmez.
 
 9. Saklama, erişim, düzeltme ve silme
-Kullanıcı kıyafet bilgilerini uygulama içinde düzenleyebilir ve kıyafetleri tek tek silebilir. Hesap e-postasını değiştiren, tüm verileri dışa aktaran veya hesabı ve ilişkili verileri uygulama içinden silen bir özellik tespit edilmemiştir.
+Kullanıcı kıyafet bilgilerini uygulama içinde düzenleyebilir ve kıyafetleri tek tek silebilir. Uygulamada hesap e-postasını değiştiren veya tüm verileri dışa aktaran bir özellik tespit edilmemiştir.
 
 Erişim, düzeltme veya silme talebinizi magunacimert.mm@gmail.com adresine iletebilirsiniz. Talebinizde AlKombin hesabınızda kullanılan e-posta adresini ve talep türünü belirtin; parolanızı veya oturum belirtecinizi göndermeyin.
 
-Hesap silme durumu: Google Play, hesap oluşturulabilen uygulamalarda hem uygulama içinde bir silme yolu hem de uygulamadan bağımsız bir web talep kaynağı ister. Bu projede uygulama içi silme yolu ve hesabı/Supabase kullanıcısını silen sunucu işlemi bulunmamaktadır. E-posta adresi iletişim kanalıdır; silmenin tamamlandığına veya belirli bir sürede yapılacağına dair teknik bir garanti değildir. Yayından önce silme süreci uygulanmalı ve test edilmeli; kullanıcıya bağlı sunucu sayaçları ile gerekli üçüncü taraf kayıtları için ne yapılacağı belirlenmelidir. Cihazdaki yerel fotoğraf ve gardırop verilerinin hesap silme sırasında uzaktan kaldırıldığına dair bir kod akışı yoktur.
+Hesap silme davranışı: Giriş yapmış kullanıcı Profil ekranındaki “Hesabımı sil” işlemini açıkça onaylayabilir. İstek yalnızca Supabase tarafından doğrulanmış oturum kimliğiyle çalışır; istek gövdesinden kullanıcı kimliği kabul edilmez. Sunucu önce o kullanıcı kimliğine ait AI kota satırlarını, ardından Supabase Auth kullanıcısını silmeyi dener. Sunucu kayıtları temizlenemezse Auth silme çağrısı yapılmaz. Auth silme başarısız olursa uygulama kısmi başarısızlığı bildirir; aynı hesapla tekrar denenebilir. Yönetici yapılandırması yoksa veya sunucu silme işlemini tamamlayamazsa API hata döndürür ve uygulama cihazdaki verileri silmez. Başarılı sunucu yanıtından sonra uygulama bu cihazdaki kullanıcı yerel kayıtlarını ve güvenle ilişkilendirilen yönetilen fotoğrafları temizler, RevenueCat oturumunu kapatmayı dener ve yerel Supabase oturumunu kapatır. Başarısız dosya temizliği için cihazda tekrar deneme kaydı tutulur.
+
+Akış PostgreSQL'deki kullanıcıya bağlı AI kota kayıtlarını temizler. Kullanıcıya bağlanmayan hizmet-geneli günlük AI toplamları korunur. RevenueCat müşteri/entitlement kayıtları otomatik silinmez; Google Play aboneliği otomatik iptal edilmez. Başka cihazlardaki yerel veriler uzaktan silinemez. Dış talep sayfası hesap silme talep sayfasıdır ve e-posta yoluyla talep oluşturma yöntemi sunar. Sunucu yönetici anahtarının varlığı ve Auth Admin salt-okunur erişimi doğrulanmış olsa da gerçek hesap silme işlemi uçtan uca test edilmemiştir. E-posta talepleri otomatik değildir; bu taleplerin operasyonel olarak izlenmesi veya belirli bir sürede sonuçlandırılması doğrulanmamıştır. Sayfanın herkese açık bir web adresinde yayımlanması gerekir.
 
 10. Çocukların gizliliği
 AlKombin çocuklara özel olarak tasarlanmamıştır. İncelenen kayıt ve profil akışlarında yaş doğrulama veya ebeveyn onayı özelliği bulunmamaktadır; bu nedenle belirli bir yaşın uygulama tarafından teknik olarak denetlendiği iddia edilmez. Bir ebeveyn veya vasi çocuğa ait bilgilerin işlendiğini düşünüyorsa bizimle iletişime geçebilir. Google Play hedef kitle ve yaş derecelendirmesi yayımdan önce ayrıca doğru şekilde seçilmelidir.
