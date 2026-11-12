@@ -1,105 +1,218 @@
-AlKombin Gizlilik Politikası
-Son güncelleme: 12 Kasım 2026
-Geliştirici adı: MAGUNACI
-Android paket adı: com.alkombin.app
-İletişim: magunacimert.mm@gmail.com
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="AlKombin Android uygulamasının gizlilik politikası.">
+  <meta name="date" content="2026-11-12">
+  <title>AlKombin Gizlilik Politikası</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #25251f;
+      --muted: #62635d;
+      --line: #e6e3dc;
+      --paper: #fffefa;
+      --accent: #4d674f;
+      --notice-bg: #fff4d7;
+      --notice-border: #e8cd83;
+      --notice-ink: #57451b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f4f2ed;
+      color: var(--ink);
+      font: 16px/1.72 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      width: min(900px, calc(100% - 32px));
+      margin: 32px auto;
+      padding: clamp(22px, 5vw, 56px);
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 12px 40px rgb(30 32 25 / 6%);
+    }
+    h1, h2 { line-height: 1.25; letter-spacing: -.02em; }
+    h1 { margin: 0 0 14px; font-size: clamp(2rem, 5vw, 2.8rem); }
+    h2 { margin: 0 0 12px; font-size: 1.42rem; }
+    p, ul { margin: 12px 0; }
+    li { margin: 7px 0; }
+    a { color: var(--accent); overflow-wrap: anywhere; text-underline-offset: .18em; }
+    a:focus-visible { outline: 3px solid #9cae82; outline-offset: 3px; border-radius: 3px; }
+    header { padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+    section { padding-top: 30px; scroll-margin-top: 20px; }
+    section + section { margin-top: 30px; border-top: 1px solid var(--line); }
+    nav { margin-top: 24px; }
+    .meta { color: var(--muted); }
+    .notice {
+      margin: 24px 0;
+      padding: 18px 20px;
+      border: 1px solid var(--notice-border);
+      border-radius: 12px;
+      background: var(--notice-bg);
+      color: var(--notice-ink);
+    }
+    .notice p:first-child { margin-top: 0; }
+    .notice p:last-child { margin-bottom: 0; }
+    nav {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #faf9f5;
+    }
+    nav strong { display: block; margin-bottom: 6px; }
+    nav ul { columns: 2; padding-left: 20px; margin-bottom: 0; }
+    footer {
+      margin-top: 42px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    code { padding: .12em .35em; border-radius: 4px; background: #efeee8; }
+    @media (max-width: 600px) {
+      body { background: var(--paper); }
+      main { width: 100%; margin: 0 auto; border: 0; border-radius: 0; box-shadow: none; }
+      nav ul { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>AlKombin Gizlilik Politikası</h1>
+    <p class="meta"><strong>Son güncelleme:</strong> 12 Kasım 2026<br>
+      <strong>Geliştirici adı:</strong> MAGUNACI<br>
+      <strong>Android paket adı:</strong> <code>com.alkombin.app</code><br>
+      <strong>İletişim:</strong> <a href="mailto:magunacimert.mm@gmail.com">magunacimert.mm@gmail.com</a></p>
+  </header>
 
-Hesap silme durumu: Uygulama içi silme kodu ve sunucu endpoint'i mevcut. Sunucudaki Supabase yönetici anahtarıyla salt-okunur Auth Admin erişimi doğrulandı; ancak gerçek bir hesap silme işlemi uçtan uca test edilmedi. Bu nedenle silme akışının her durumda başarıyla tamamlandığı iddia edilmemelidir. Bu dış talep sayfası da herkese açık, kararlı bir web adresinde yayımlanmış olmalıdır.
+  <aside class="notice" aria-label="Önemli bilgi">
+    <p><strong>Hesap silme durumu:</strong> Uygulama içi silme kodu ve sunucu endpoint'i mevcut. Sunucudaki Supabase yönetici anahtarıyla salt-okunur Auth Admin erişimi doğrulandı; ancak gerçek bir hesap silme işlemi uçtan uca test edilmedi. Bu nedenle silme akışının her durumda başarıyla tamamlandığı iddia edilmemelidir. Bu dış talep sayfası da herkese açık, kararlı bir web adresinde yayımlanmış olmalıdır.</p>
+    <p>Bu metin hukuki danışmanlık değildir; yayımdan önce hukuk uzmanına inceletilmelidir.</p>
+  </aside>
 
-Bu metin hukuki danışmanlık değildir; yayımdan önce hukuk uzmanına inceletilmelidir.
+  <nav aria-label="Politika bölümleri">
+    <strong>İçindekiler</strong>
+    <ul>
+      <li><a href="#kapsam">Kapsam ve mevcut durum</a></li>
+      <li><a href="#hesap">Hesap ve oturum</a></li>
+      <li><a href="#yerel">Gardırop ve fotoğraflar</a></li>
+      <li><a href="#ai">AI özellikleri</a></li>
+      <li><a href="#kotalar">Kotalar ve kayıtlar</a></li>
+      <li><a href="#abonelik">Abonelikler</a></li>
+      <li><a href="#reklam">Reklam ve rıza</a></li>
+      <li><a href="#saglayicilar">Hizmet sağlayıcıları</a></li>
+      <li><a href="#haklar">Haklar ve silme</a></li>
+      <li><a href="#cocuklar">Çocukların gizliliği</a></li>
+      <li><a href="#guvenlik">Güvenlik ve aktarım</a></li>
+      <li><a href="#degisiklikler">Politika değişiklikleri</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ul>
+  </nav>
 
-İçindekiler
-Kapsam ve mevcut durum
-Hesap ve oturum
-Gardırop ve fotoğraflar
-AI özellikleri
-Kotalar ve kayıtlar
-Abonelikler
-Reklam ve rıza
-Hizmet sağlayıcıları
-Haklar ve silme
-Çocukların gizliliği
-Güvenlik ve aktarım
-Politika değişiklikleri
-İletişim
-1. Kapsam ve özelliklerin mevcut durumu
-Bu politika AlKombin Android uygulamasının mevcut veri işleme davranışını ve ayrı olarak belirtilen planlı özellikleri açıklar. E-posta hesabı akışı Supabase Auth koduyla hazırlanmıştır. Proje yapılandırmasında AI özelliği etkin olarak işaretlenmiştir; ancak bu incelemede OpenAI isteği yapılmadığından model erişimi ve başarılı analiz kullanılabilirliği doğrulanmamıştır. RevenueCat satın alma ve AdMob reklam bayrakları ile gerekli kimlikler incelenen ortamlarda ayarlı değildir; bu nedenle satın alma ve reklam gösterimi etkin değildir.
+  <section id="kapsam">
+    <h2>1. Kapsam ve özelliklerin mevcut durumu</h2>
+    <p>Bu politika AlKombin Android uygulamasının mevcut veri işleme davranışını ve ayrı olarak belirtilen planlı özellikleri açıklar. E-posta hesabı akışı Supabase Auth koduyla hazırlanmıştır. Proje yapılandırmasında AI özelliği etkin olarak işaretlenmiştir; ancak bu incelemede OpenAI isteği yapılmadığından model erişimi ve başarılı analiz kullanılabilirliği doğrulanmamıştır. RevenueCat satın alma ve AdMob reklam bayrakları ile gerekli kimlikler incelenen ortamlarda ayarlı değildir; bu nedenle satın alma ve reklam gösterimi etkin değildir.</p>
+    <p>Abonelik veya reklam gibi planlı bir özellik etkinleştirilmeden önce ilgili veri akışı uygulama içinde açıklanmalı, gerekli kullanıcı onayı alınmalı, bu politika ve Google Play Veri Güvenliği beyanı güncellenmelidir. AI özelliği için de model erişimi ve yayın yapılandırması doğrulanmadan kullanılabilirlik taahhüdü verilmez.</p>
+  </section>
 
-Abonelik veya reklam gibi planlı bir özellik etkinleştirilmeden önce ilgili veri akışı uygulama içinde açıklanmalı, gerekli kullanıcı onayı alınmalı, bu politika ve Google Play Veri Güvenliği beyanı güncellenmelidir. AI özelliği için de model erişimi ve yayın yapılandırması doğrulanmadan kullanılabilirlik taahhüdü verilmez.
+  <section id="hesap">
+    <h2>2. Hesap, kimlik doğrulama ve oturum</h2>
+    <p>E-posta ile kayıt ve giriş için Supabase Auth kullanılır. Supabase, hesap e-posta adresini, Supabase kullanıcı kimliğini ve kimlik doğrulama için gerekli bilgileri işler. Parolanız Supabase'in kimlik doğrulama servisine iletilir; AlKombin API'sinde parola saklayan bir özellik tespit edilmemiştir.</p>
+    <p>Uygulama, oturumun devam etmesi ve korumalı API isteklerinin doğrulanması için Supabase oturum bilgilerini kullanır. Android'de oturum saklama için Expo SecureStore; web önizlemesinde AsyncStorage kullanılır. Sunucu, korumalı isteklerde erişim belirtecini Supabase üzerinden doğrular. Oturum saklama yöntemi tek başına bütün depolama veya cihaz güvenliği için garanti anlamına gelmez.</p>
+  </section>
 
-2. Hesap, kimlik doğrulama ve oturum
-E-posta ile kayıt ve giriş için Supabase Auth kullanılır. Supabase, hesap e-posta adresini, Supabase kullanıcı kimliğini ve kimlik doğrulama için gerekli bilgileri işler. Parolanız Supabase'in kimlik doğrulama servisine iletilir; AlKombin API'sinde parola saklayan bir özellik tespit edilmemiştir.
+  <section id="yerel">
+    <h2>3. Gardırop, profil, fotoğraflar ve cihaz depolaması</h2>
+    <p>Gardırop kayıtları, kombin geçmişi ve favoriler; kıyafet adı, kategori, renk, desen, stil, mevsim ve oluşturulma tarihi gibi alanlarla cihazın yerel AsyncStorage alanında tutulur. Stil profili tercihleri de yerel olarak saklanır. Veriler oturum açmış kullanıcı kimliğine göre cihazda ayrı anahtarlarla tutulur. Uygulama kodunda gardırop verilerini Supabase'e eşitleyen bir akış bulunmamaktadır.</p>
+    <p>Android'de kıyafet fotoğrafları uygulamanın belge dizinindeki <code>alkombin</code> klasörüne kopyalanır. Uygulama, bir kıyafet silindiğinde veya fotoğrafı değiştirildiğinde kendi yönettiği eski fotoğraf dosyasını silmeye çalışır. Hesap silme akışı sunucudan başarı aldıktan sonra bu cihazdaki ilgili kullanıcıya ait gardırop, kombin, favori ve stil profili kaydını, hesap sahibinin eski yerel kayıt anahtarını ve başka bir yerel hesaptan referans edilmediği doğrulanan uygulama yönetimli fotoğrafları siler. Başka hesaptan kullanıldığı anlaşılan ya da referansları doğrulanamayan fotoğraflar güvenlik için korunur ve temizlik yeniden denenmek üzere cihazda bekletilebilir. Başka cihazlardaki yerel kopyalar uzaktan temizlenemez.</p>
+    <p>Fotoğraf seçmek veya kamerayla çekmek için ilgili Android izinleri kullanılır. Fotoğraf, AI için ayrıca onay verilmediği sürece uygulama sunucusuna gönderilmez.</p>
+  </section>
 
-Uygulama, oturumun devam etmesi ve korumalı API isteklerinin doğrulanması için Supabase oturum bilgilerini kullanır. Android'de oturum saklama için Expo SecureStore; web önizlemesinde AsyncStorage kullanılır. Sunucu, korumalı isteklerde erişim belirtecini Supabase üzerinden doğrular. Oturum saklama yöntemi tek başına bütün depolama veya cihaz güvenliği için garanti anlamına gelmez.
+  <section id="ai">
+    <h2>4. AI fotoğraf analizi ve kombin önerileri — kullanılabilirlik doğrulanmadı</h2>
+    <p>Proje yapılandırmasında AI özelliği etkin işaretlidir. Bu politika incelemesinde gerçek OpenAI isteği yapılmadığından model erişimi ve analizin başarıyla çalışması doğrulanmamıştır. AI kullanım akışı başlatılırsa:</p>
+    <ul>
+      <li>Kıyafet düzenleme ekranında kullanıcıya fotoğrafın AI analiz hizmeti için OpenAI'ye gönderileceği açıklanır. Kullanıcı <strong>“Onayla ve analiz et”</strong> seçeneğini seçmeden analiz isteği başlatılmaz; API de <code>consent: true</code> değerini zorunlu tutar.</li>
+      <li>Fotoğraf cihazda küçültülüp JPEG olarak yeniden kodlanan bir kopya biçiminde gönderilir. İstek gövdesine ayrı bir EXIF alanı eklenmez. Yeniden kodlamanın bütün görüntü metaverisini temizlediği bağımsız olarak doğrulanmamıştır; bu nedenle mutlak bir metaveri temizleme garantisi verilmez.</li>
+      <li>Görüntü, kıyafeti sınıflandırmak amacıyla AlKombin API'sinden OpenAI API'sine iletilir. Mevcut API kodu görüntüyü kendi veritabanına veya uygulama depolamasına yazmaz; istek gövdesini uygulama loglarına eklemez. OpenAI'nin kendi API veri işleme ve saklama koşulları ayrıca geçerlidir; AlKombin kodu sağlayıcının saklama süresini belirlemez.</li>
+      <li>AI kombin önerisi istendiğinde OpenAI'ye kullanıcının seçtiği durum/ortam ve gardırop adaylarının kimlikleri ile ad, kategori, renk, desen, stil ve mevsim bilgileri gönderilir. Bu akışta kıyafet fotoğrafları gönderilmez. API yalnızca gönderilen gardırop adaylarının kimliklerini kullanan sonuçları kabul eder.</li>
+      <li>AI sonucu düzenlenebilir; yeni kıyafet veya kombin kullanıcı kaydettiğinde yerel gardırop/geçmiş alanına eklenir.</li>
+    </ul>
+  </section>
 
-3. Gardırop, profil, fotoğraflar ve cihaz depolaması
-Gardırop kayıtları, kombin geçmişi ve favoriler; kıyafet adı, kategori, renk, desen, stil, mevsim ve oluşturulma tarihi gibi alanlarla cihazın yerel AsyncStorage alanında tutulur. Stil profili tercihleri de yerel olarak saklanır. Veriler oturum açmış kullanıcı kimliğine göre cihazda ayrı anahtarlarla tutulur. Uygulama kodunda gardırop verilerini Supabase'e eşitleyen bir akış bulunmamaktadır.
+  <section id="kotalar">
+    <h2>5. Kotalar, API kullanımı ve sunucu kayıtları</h2>
+    <p>AI etkinleştirilirse API, doğrulanmış Supabase kullanıcı kimliğine bağlı günlük analiz ve kombin sayaçlarını PostgreSQL'de tutar. Ayrıca hizmet genelinde günlük istek sayısı ve tahmini maliyet toplamı saklanır. Genel toplamlar kullanıcıya ait olmayan günlük kullanım ölçüleridir. Kodda bu kayıtlar için otomatik silme veya belirli bir saklama süresi tanımlanmamıştır; gerçek saklama süresi veritabanı ve barındırma yapılandırmasına bağlıdır ve bu incelemede doğrulanamamıştır.</p>
+    <p>API istek kayıtları yöntem, yol ve HTTP durum kodu gibi teknik bilgileri içerir. AI hata kayıtlarında kullanıcı kimliği, işlem türü ve güvenli hata kodu; abonelik doğrulama hatalarında kullanıcı kimliği ve hata mesajı yer alabilir. Uygulama logger'ı yetkilendirme ve çerez başlıklarını maskeler ve istek gövdesini kaydetmez. Logların altyapıdaki saklama süresi koddan belirlenememektedir.</p>
+  </section>
 
-Android'de kıyafet fotoğrafları uygulamanın belge dizinindeki alkombin klasörüne kopyalanır. Uygulama, bir kıyafet silindiğinde veya fotoğrafı değiştirildiğinde kendi yönettiği eski fotoğraf dosyasını silmeye çalışır. Hesap silme akışı sunucudan başarı aldıktan sonra bu cihazdaki ilgili kullanıcıya ait gardırop, kombin, favori ve stil profili kaydını, hesap sahibinin eski yerel kayıt anahtarını ve başka bir yerel hesaptan referans edilmediği doğrulanan uygulama yönetimli fotoğrafları siler. Başka hesaptan kullanıldığı anlaşılan ya da referansları doğrulanamayan fotoğraflar güvenlik için korunur ve temizlik yeniden denenmek üzere cihazda bekletilebilir. Başka cihazlardaki yerel kopyalar uzaktan temizlenemez.
+  <section id="abonelik">
+    <h2>6. Abonelik ve Google Play Billing — henüz etkin değil</h2>
+    <p>RevenueCat ve Google Play Billing için mobil kod mevcut olsa da, incelenen ortamlarda satın alma bayrağı, RevenueCat uygulama anahtarı, proje/entitlement yapılandırması ve ürün teklifleri ayarlı değildir. Bu nedenle şu anda gerçek satın alma veya geri yükleme işlemi etkin değildir.</p>
+    <p>Özellik gelecekte açılırsa Google Play ödeme ve abonelik işlemlerini, RevenueCat ise satın alma/entitlement doğrulamasını işler. Uygulama sunucusu Premium durumunu kullanıcı kimliğiyle RevenueCat üzerinden doğrular; yalnızca mobil istemcinin bildirdiği duruma dayanmaz. Kart veya ödeme hesabı bilgilerini AlKombin uygulama kodunun topladığına dair bir akış bulunmamıştır. Kullanıcı abonelik iptalini Google Play abonelik yönetiminden yapar. <strong>AlKombin hesabını silmek Google Play aboneliğini iptal etmez veya ücretlendirmeyi durdurmaz.</strong> Hesabınızı silmeden önce aboneliğinizi Play Store'daki abonelik yönetiminden ayrıca iptal edin. RevenueCat'teki müşteri/entitlement kaydı bu uygulama akışıyla silinmez.</p>
+    <p>İlgili sağlayıcıların kendi veri işleme koşulları geçerlidir: <a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a> ve <a href="https://www.revenuecat.com/privacy/">RevenueCat Gizlilik Politikası</a>.</p>
+  </section>
 
-Fotoğraf seçmek veya kamerayla çekmek için ilgili Android izinleri kullanılır. Fotoğraf, AI için ayrıca onay verilmediği sürece uygulama sunucusuna gönderilmez.
+  <section id="reklam">
+    <h2>7. Reklamlar ve UMP rızası — henüz etkin değil</h2>
+    <p>AdMob/Google Mobile Ads ve UMP için Android kodu mevcuttur; ancak incelenen ortamlarda reklam bayrağı, AdMob uygulama kimliği ve banner kimliği yapılandırılmamıştır. Bu nedenle şu anda reklam SDK'sı başlatılmaz ve reklam isteği gönderilmez.</p>
+    <p>Reklamlar gelecekte açılırsa uygulama, reklam SDK'sını başlatmadan önce UMP rıza akışını çağırır ve yalnızca SDK reklam isteğine izin verdiğini bildirdiğinde reklam bileşenini yükler. Google Mobile Ads SDK'sı, sürüm ve ayarlara bağlı olarak IP adresi, reklam/uygulama etkileşimleri, tanılama bilgileri ve cihaz/hesap tanımlayıcıları gibi verileri reklam, ölçüm ve sahtekârlığın önlenmesi amaçlarıyla toplayabilir veya paylaşabilir. Kullanılacak SDK sürümünün kesin veri türleri ve amaçları yayın öncesi Google'ın güncel açıklamasıyla karşılaştırılmalıdır. Reklamların veri işleme koşulları Google'ın <a href="https://policies.google.com/privacy">Gizlilik Politikası</a> ve <a href="https://policies.google.com/technologies/partner-sites">Google iş ortakları politikası</a> kapsamında değerlendirilmelidir. Sunucuda doğrulanmış Premium kullanıcılarına reklam gösterilmemesi için kontrol kodu mevcuttur. Reklamlar açılmadan önce AdMob gizlilik mesajları, rıza seçenekleri ve Play Console beyanları ayrıca yapılandırılmalıdır.</p>
+  </section>
 
-4. AI fotoğraf analizi ve kombin önerileri — kullanılabilirlik doğrulanmadı
-Proje yapılandırmasında AI özelliği etkin işaretlidir. Bu politika incelemesinde gerçek OpenAI isteği yapılmadığından model erişimi ve analizin başarıyla çalışması doğrulanmamıştır. AI kullanım akışı başlatılırsa:
+  <section id="saglayicilar">
+    <h2>8. Hizmet sağlayıcıları</h2>
+    <ul>
+      <li><strong>Supabase:</strong> e-posta hesabı, kimlik doğrulama ve oturum işlemleri. <a href="https://supabase.com/privacy">Gizlilik Politikası</a>.</li>
+      <li><strong>OpenAI:</strong> yalnızca AI etkinleştirilir ve kullanıcı ilgili isteği açıkça başlatırsa fotoğraf analizi veya gönderilen kıyafet bilgileriyle kombin önerisi. <a href="https://openai.com/policies/privacy-policy">Gizlilik Politikası</a>.</li>
+      <li><strong>Google Play:</strong> özellik etkinleştirildikten sonra abonelik ve ödeme işlemleri.</li>
+      <li><strong>RevenueCat:</strong> özellik etkinleştirildikten sonra abonelik paketleri ve Premium entitlement doğrulaması. <a href="https://www.revenuecat.com/privacy/">Gizlilik Politikası</a>.</li>
+      <li><strong>Google AdMob ve UMP:</strong> özellik etkinleştirildikten sonra reklam sunumu ve rıza yönetimi. <a href="https://policies.google.com/technologies/partner-sites">Google iş ortakları politikası</a>.</li>
+      <li><strong>AlKombin API/PostgreSQL barındırma sağlayıcısı:</strong> kimlik doğrulamalı API istekleri, AI kota sayaçları ve hizmet genelindeki günlük toplamlar. Kod PostgreSQL kullanır; gerçek veritabanı bölgesi ve barındırma yapılandırması bu incelemede doğrulanamamıştır.</li>
+    </ul>
+    <p>Sağlayıcılar kendi gizlilik bildirimleri, yapılandırmaları ve sözleşmeleri kapsamında veri işleyebilir. AlKombin, bu sağlayıcıların kod dışında belirlediği saklama sürelerini veya işleme konumlarını garanti etmez.</p>
+  </section>
 
-Kıyafet düzenleme ekranında kullanıcıya fotoğrafın AI analiz hizmeti için OpenAI'ye gönderileceği açıklanır. Kullanıcı “Onayla ve analiz et” seçeneğini seçmeden analiz isteği başlatılmaz; API de consent: true değerini zorunlu tutar.
-Fotoğraf cihazda küçültülüp JPEG olarak yeniden kodlanan bir kopya biçiminde gönderilir. İstek gövdesine ayrı bir EXIF alanı eklenmez. Yeniden kodlamanın bütün görüntü metaverisini temizlediği bağımsız olarak doğrulanmamıştır; bu nedenle mutlak bir metaveri temizleme garantisi verilmez.
-Görüntü, kıyafeti sınıflandırmak amacıyla AlKombin API'sinden OpenAI API'sine iletilir. Mevcut API kodu görüntüyü kendi veritabanına veya uygulama depolamasına yazmaz; istek gövdesini uygulama loglarına eklemez. OpenAI'nin kendi API veri işleme ve saklama koşulları ayrıca geçerlidir; AlKombin kodu sağlayıcının saklama süresini belirlemez.
-AI kombin önerisi istendiğinde OpenAI'ye kullanıcının seçtiği durum/ortam ve gardırop adaylarının kimlikleri ile ad, kategori, renk, desen, stil ve mevsim bilgileri gönderilir. Bu akışta kıyafet fotoğrafları gönderilmez. API yalnızca gönderilen gardırop adaylarının kimliklerini kullanan sonuçları kabul eder.
-AI sonucu düzenlenebilir; yeni kıyafet veya kombin kullanıcı kaydettiğinde yerel gardırop/geçmiş alanına eklenir.
-5. Kotalar, API kullanımı ve sunucu kayıtları
-AI etkinleştirilirse API, doğrulanmış Supabase kullanıcı kimliğine bağlı günlük analiz ve kombin sayaçlarını PostgreSQL'de tutar. Ayrıca hizmet genelinde günlük istek sayısı ve tahmini maliyet toplamı saklanır. Genel toplamlar kullanıcıya ait olmayan günlük kullanım ölçüleridir. Kodda bu kayıtlar için otomatik silme veya belirli bir saklama süresi tanımlanmamıştır; gerçek saklama süresi veritabanı ve barındırma yapılandırmasına bağlıdır ve bu incelemede doğrulanamamıştır.
+  <section id="haklar">
+    <h2>9. Saklama, erişim, düzeltme ve silme</h2>
+    <p>Kullanıcı kıyafet bilgilerini uygulama içinde düzenleyebilir ve kıyafetleri tek tek silebilir. Uygulamada hesap e-postasını değiştiren veya tüm verileri dışa aktaran bir özellik tespit edilmemiştir.</p>
+    <p>Erişim, düzeltme veya silme talebinizi <a href="mailto:magunacimert.mm@gmail.com">magunacimert.mm@gmail.com</a> adresine iletebilirsiniz. Talebinizde AlKombin hesabınızda kullanılan e-posta adresini ve talep türünü belirtin; parolanızı veya oturum belirtecinizi göndermeyin.</p>
+    <p><strong>Hesap silme davranışı:</strong> Giriş yapmış kullanıcı Profil ekranındaki “Hesabımı sil” işlemini açıkça onaylayabilir. İstek yalnızca Supabase tarafından doğrulanmış oturum kimliğiyle çalışır; istek gövdesinden kullanıcı kimliği kabul edilmez. Sunucu önce o kullanıcı kimliğine ait AI kota satırlarını, ardından Supabase Auth kullanıcısını silmeyi dener. Sunucu kayıtları temizlenemezse Auth silme çağrısı yapılmaz. Auth silme başarısız olursa uygulama kısmi başarısızlığı bildirir; aynı hesapla tekrar denenebilir. Yönetici yapılandırması yoksa veya sunucu silme işlemini tamamlayamazsa API hata döndürür ve uygulama cihazdaki verileri silmez. Başarılı sunucu yanıtından sonra uygulama bu cihazdaki kullanıcı yerel kayıtlarını ve güvenle ilişkilendirilen yönetilen fotoğrafları temizler, RevenueCat oturumunu kapatmayı dener ve yerel Supabase oturumunu kapatır. Başarısız dosya temizliği için cihazda tekrar deneme kaydı tutulur.</p>
+    <p>Akış PostgreSQL'deki kullanıcıya bağlı AI kota kayıtlarını temizler. Kullanıcıya bağlanmayan hizmet-geneli günlük AI toplamları korunur. RevenueCat müşteri/entitlement kayıtları otomatik silinmez; Google Play aboneliği otomatik iptal edilmez. Başka cihazlardaki yerel veriler uzaktan silinemez. Dış talep sayfası <a href="account-deletion.html">hesap silme talep sayfasıdır</a> ve e-posta yoluyla talep oluşturma yöntemi sunar. Sunucu yönetici anahtarının varlığı ve Auth Admin salt-okunur erişimi doğrulanmış olsa da gerçek hesap silme işlemi uçtan uca test edilmemiştir. E-posta talepleri otomatik değildir; bu taleplerin operasyonel olarak izlenmesi veya belirli bir sürede sonuçlandırılması doğrulanmamıştır. Sayfanın herkese açık bir web adresinde yayımlanması gerekir.</p>
+  </section>
 
-API istek kayıtları yöntem, yol ve HTTP durum kodu gibi teknik bilgileri içerir. AI hata kayıtlarında kullanıcı kimliği, işlem türü ve güvenli hata kodu; abonelik doğrulama hatalarında kullanıcı kimliği ve hata mesajı yer alabilir. Uygulama logger'ı yetkilendirme ve çerez başlıklarını maskeler ve istek gövdesini kaydetmez. Logların altyapıdaki saklama süresi koddan belirlenememektedir.
+  <section id="cocuklar">
+    <h2>10. Çocukların gizliliği</h2>
+    <p>AlKombin çocuklara özel olarak tasarlanmamıştır. İncelenen kayıt ve profil akışlarında yaş doğrulama veya ebeveyn onayı özelliği bulunmamaktadır; bu nedenle belirli bir yaşın uygulama tarafından teknik olarak denetlendiği iddia edilmez. Bir ebeveyn veya vasi çocuğa ait bilgilerin işlendiğini düşünüyorsa bizimle iletişime geçebilir. Google Play hedef kitle ve yaş derecelendirmesi yayımdan önce ayrıca doğru şekilde seçilmelidir.</p>
+  </section>
 
-6. Abonelik ve Google Play Billing — henüz etkin değil
-RevenueCat ve Google Play Billing için mobil kod mevcut olsa da, incelenen ortamlarda satın alma bayrağı, RevenueCat uygulama anahtarı, proje/entitlement yapılandırması ve ürün teklifleri ayarlı değildir. Bu nedenle şu anda gerçek satın alma veya geri yükleme işlemi etkin değildir.
+  <section id="guvenlik">
+    <h2>11. Güvenlik ve uluslararası veri aktarımı</h2>
+    <p>Oturum verisi Android'de SecureStore, web önizlemesinde AsyncStorage üzerinden saklanır; gardırop kayıtları cihazdaki AsyncStorage alanında bulunur. Bu kod incelemesi, yerel gardırop verilerinin şifreli depolandığını veya belirli bir cihaz güvenliği seviyesini doğrulamamıştır. API loglarında yetkilendirme/çerez başlıklarının maskelenmesi kodda yapılandırılmıştır; bu, altyapıdaki tüm loglar veya depolama için bir güvenlik garantisi değildir.</p>
+    <p>Supabase, OpenAI, Google ve RevenueCat gibi sağlayıcılar verileri Türkiye dışındaki sistemlerde işleyebilir. Kullanılan hesapların veri bölgesi, uluslararası aktarım mekanizması ve ilgili sözleşmeler proje kodundan doğrulanamamıştır. Bu ayarlar ve yürürlükteki veri koruma mevzuatı yayımdan önce kontrol edilmelidir.</p>
+  </section>
 
-Özellik gelecekte açılırsa Google Play ödeme ve abonelik işlemlerini, RevenueCat ise satın alma/entitlement doğrulamasını işler. Uygulama sunucusu Premium durumunu kullanıcı kimliğiyle RevenueCat üzerinden doğrular; yalnızca mobil istemcinin bildirdiği duruma dayanmaz. Kart veya ödeme hesabı bilgilerini AlKombin uygulama kodunun topladığına dair bir akış bulunmamıştır. Kullanıcı abonelik iptalini Google Play abonelik yönetiminden yapar. AlKombin hesabını silmek Google Play aboneliğini iptal etmez veya ücretlendirmeyi durdurmaz. Hesabınızı silmeden önce aboneliğinizi Play Store'daki abonelik yönetiminden ayrıca iptal edin. RevenueCat'teki müşteri/entitlement kaydı bu uygulama akışıyla silinmez.
+  <section id="degisiklikler">
+    <h2>12. Bu politikadaki değişiklikler</h2>
+    <p>Veri işleme davranışı değişirse politika metni ve son güncelleme tarihi yenilenmelidir. İncelenen kodda politika değişikliklerini kullanıcılara otomatik bildiren bir sistem tespit edilmemiştir. Güncel metin, yayımlandığı web sayfasında sunulmalıdır.</p>
+  </section>
 
-İlgili sağlayıcıların kendi veri işleme koşulları geçerlidir: Google Gizlilik Politikası ve RevenueCat Gizlilik Politikası.
+  <section id="iletisim">
+    <h2>13. İletişim</h2>
+    <p>Gizlilik ve kişisel verilerle ilgili sorularınızı veya taleplerinizi aşağıdaki adrese iletebilirsiniz:</p>
+    <p><strong>MAGUNACI — AlKombin</strong><br>
+      E-posta: <a href="mailto:magunacimert.mm@gmail.com">magunacimert.mm@gmail.com</a><br>
+      Android paket adı: <code>com.alkombin.app</code></p>
+    <p>Geliştirici adı bu politika için kullanıcı tarafından sağlanan “MAGUNACI” bilgisidir; kayıtlı tüzel kişi unvanı ayrıca doğrulanmamıştır.</p>
+  </section>
 
-7. Reklamlar ve UMP rızası — henüz etkin değil
-AdMob/Google Mobile Ads ve UMP için Android kodu mevcuttur; ancak incelenen ortamlarda reklam bayrağı, AdMob uygulama kimliği ve banner kimliği yapılandırılmamıştır. Bu nedenle şu anda reklam SDK'sı başlatılmaz ve reklam isteği gönderilmez.
-
-Reklamlar gelecekte açılırsa uygulama, reklam SDK'sını başlatmadan önce UMP rıza akışını çağırır ve yalnızca SDK reklam isteğine izin verdiğini bildirdiğinde reklam bileşenini yükler. Google Mobile Ads SDK'sı, sürüm ve ayarlara bağlı olarak IP adresi, reklam/uygulama etkileşimleri, tanılama bilgileri ve cihaz/hesap tanımlayıcıları gibi verileri reklam, ölçüm ve sahtekârlığın önlenmesi amaçlarıyla toplayabilir veya paylaşabilir. Kullanılacak SDK sürümünün kesin veri türleri ve amaçları yayın öncesi Google'ın güncel açıklamasıyla karşılaştırılmalıdır. Reklamların veri işleme koşulları Google'ın Gizlilik Politikası ve Google iş ortakları politikası kapsamında değerlendirilmelidir. Sunucuda doğrulanmış Premium kullanıcılarına reklam gösterilmemesi için kontrol kodu mevcuttur. Reklamlar açılmadan önce AdMob gizlilik mesajları, rıza seçenekleri ve Play Console beyanları ayrıca yapılandırılmalıdır.
-
-8. Hizmet sağlayıcıları
-Supabase: e-posta hesabı, kimlik doğrulama ve oturum işlemleri. Gizlilik Politikası.
-OpenAI: yalnızca AI etkinleştirilir ve kullanıcı ilgili isteği açıkça başlatırsa fotoğraf analizi veya gönderilen kıyafet bilgileriyle kombin önerisi. Gizlilik Politikası.
-Google Play: özellik etkinleştirildikten sonra abonelik ve ödeme işlemleri.
-RevenueCat: özellik etkinleştirildikten sonra abonelik paketleri ve Premium entitlement doğrulaması. Gizlilik Politikası.
-Google AdMob ve UMP: özellik etkinleştirildikten sonra reklam sunumu ve rıza yönetimi. Google iş ortakları politikası.
-AlKombin API/PostgreSQL barındırma sağlayıcısı: kimlik doğrulamalı API istekleri, AI kota sayaçları ve hizmet genelindeki günlük toplamlar. Kod PostgreSQL kullanır; gerçek veritabanı bölgesi ve barındırma yapılandırması bu incelemede doğrulanamamıştır.
-Sağlayıcılar kendi gizlilik bildirimleri, yapılandırmaları ve sözleşmeleri kapsamında veri işleyebilir. AlKombin, bu sağlayıcıların kod dışında belirlediği saklama sürelerini veya işleme konumlarını garanti etmez.
-
-9. Saklama, erişim, düzeltme ve silme
-Kullanıcı kıyafet bilgilerini uygulama içinde düzenleyebilir ve kıyafetleri tek tek silebilir. Uygulamada hesap e-postasını değiştiren veya tüm verileri dışa aktaran bir özellik tespit edilmemiştir.
-
-Erişim, düzeltme veya silme talebinizi magunacimert.mm@gmail.com adresine iletebilirsiniz. Talebinizde AlKombin hesabınızda kullanılan e-posta adresini ve talep türünü belirtin; parolanızı veya oturum belirtecinizi göndermeyin.
-
-Hesap silme davranışı: Giriş yapmış kullanıcı Profil ekranındaki “Hesabımı sil” işlemini açıkça onaylayabilir. İstek yalnızca Supabase tarafından doğrulanmış oturum kimliğiyle çalışır; istek gövdesinden kullanıcı kimliği kabul edilmez. Sunucu önce o kullanıcı kimliğine ait AI kota satırlarını, ardından Supabase Auth kullanıcısını silmeyi dener. Sunucu kayıtları temizlenemezse Auth silme çağrısı yapılmaz. Auth silme başarısız olursa uygulama kısmi başarısızlığı bildirir; aynı hesapla tekrar denenebilir. Yönetici yapılandırması yoksa veya sunucu silme işlemini tamamlayamazsa API hata döndürür ve uygulama cihazdaki verileri silmez. Başarılı sunucu yanıtından sonra uygulama bu cihazdaki kullanıcı yerel kayıtlarını ve güvenle ilişkilendirilen yönetilen fotoğrafları temizler, RevenueCat oturumunu kapatmayı dener ve yerel Supabase oturumunu kapatır. Başarısız dosya temizliği için cihazda tekrar deneme kaydı tutulur.
-
-Akış PostgreSQL'deki kullanıcıya bağlı AI kota kayıtlarını temizler. Kullanıcıya bağlanmayan hizmet-geneli günlük AI toplamları korunur. RevenueCat müşteri/entitlement kayıtları otomatik silinmez; Google Play aboneliği otomatik iptal edilmez. Başka cihazlardaki yerel veriler uzaktan silinemez. Dış talep sayfası hesap silme talep sayfasıdır ve e-posta yoluyla talep oluşturma yöntemi sunar. Sunucu yönetici anahtarının varlığı ve Auth Admin salt-okunur erişimi doğrulanmış olsa da gerçek hesap silme işlemi uçtan uca test edilmemiştir. E-posta talepleri otomatik değildir; bu taleplerin operasyonel olarak izlenmesi veya belirli bir sürede sonuçlandırılması doğrulanmamıştır. Sayfanın herkese açık bir web adresinde yayımlanması gerekir.
-
-10. Çocukların gizliliği
-AlKombin çocuklara özel olarak tasarlanmamıştır. İncelenen kayıt ve profil akışlarında yaş doğrulama veya ebeveyn onayı özelliği bulunmamaktadır; bu nedenle belirli bir yaşın uygulama tarafından teknik olarak denetlendiği iddia edilmez. Bir ebeveyn veya vasi çocuğa ait bilgilerin işlendiğini düşünüyorsa bizimle iletişime geçebilir. Google Play hedef kitle ve yaş derecelendirmesi yayımdan önce ayrıca doğru şekilde seçilmelidir.
-
-11. Güvenlik ve uluslararası veri aktarımı
-Oturum verisi Android'de SecureStore, web önizlemesinde AsyncStorage üzerinden saklanır; gardırop kayıtları cihazdaki AsyncStorage alanında bulunur. Bu kod incelemesi, yerel gardırop verilerinin şifreli depolandığını veya belirli bir cihaz güvenliği seviyesini doğrulamamıştır. API loglarında yetkilendirme/çerez başlıklarının maskelenmesi kodda yapılandırılmıştır; bu, altyapıdaki tüm loglar veya depolama için bir güvenlik garantisi değildir.
-
-Supabase, OpenAI, Google ve RevenueCat gibi sağlayıcılar verileri Türkiye dışındaki sistemlerde işleyebilir. Kullanılan hesapların veri bölgesi, uluslararası aktarım mekanizması ve ilgili sözleşmeler proje kodundan doğrulanamamıştır. Bu ayarlar ve yürürlükteki veri koruma mevzuatı yayımdan önce kontrol edilmelidir.
-
-12. Bu politikadaki değişiklikler
-Veri işleme davranışı değişirse politika metni ve son güncelleme tarihi yenilenmelidir. İncelenen kodda politika değişikliklerini kullanıcılara otomatik bildiren bir sistem tespit edilmemiştir. Güncel metin, yayımlandığı web sayfasında sunulmalıdır.
-
-13. İletişim
-Gizlilik ve kişisel verilerle ilgili sorularınızı veya taleplerinizi aşağıdaki adrese iletebilirsiniz:
-
-MAGUNACI — AlKombin
-E-posta: magunacimert.mm@gmail.com
-Android paket adı: com.alkombin.app
-
-Geliştirici adı bu politika için kullanıcı tarafından sağlanan “MAGUNACI” bilgisidir; kayıtlı tüzel kişi unvanı ayrıca doğrulanmamıştır.
-
-Bu metin genel bilgilendirme amaçlı bir taslaktır ve hukuki danışmanlık değildir. Yayımdan önce gerçek veri akışları, hesap silme süreci ve yerel mevzuatla karşılaştırılarak gözden geçirilmelidir.
+  <footer>
+    <p>Bu metin genel bilgilendirme amaçlı bir taslaktır ve hukuki danışmanlık değildir. Yayımdan önce gerçek veri akışları, hesap silme süreci ve yerel mevzuatla karşılaştırılarak gözden geçirilmelidir.</p>
+  </footer>
+</main>
+</body>
+</html>
